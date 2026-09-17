@@ -1,0 +1,1 @@
+const grid=document.querySelector('#grid');grid.innerHTML=Array.from({length:12},(_,i)=>`<img src="https://picsum.photos/seed/bhupal-${i}/500/500" alt="Gallery image ${i+1}" loading="lazy">`).join('');

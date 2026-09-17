@@ -1,3 +1,4 @@
 # Expense Tracker
+Track expenses in the browser with totals and localStorage persistence.
 
-Browser-based expense tracker using JavaScript and localStorage.
+Tech: HTML, CSS, JavaScript, localStorage.

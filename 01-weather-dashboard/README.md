@@ -1,3 +1,4 @@
 # Weather Dashboard
+Search a city and view current temperature, humidity and wind using Open-Meteo APIs.
 
-Live weather dashboard using the Open-Meteo API, Fetch, async/await, and responsive UI.
+Tech: HTML, CSS, JavaScript, Fetch API.
