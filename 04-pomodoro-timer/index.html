@@ -1,1 +1,19 @@
-<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pomodoro Timer</title><style>body{font:16px system-ui;text-align:center;margin:80px;background:#111827;color:#fff}#time{font-size:80px;margin:30px}button{padding:12px 20px;margin:5px}</style><h1>Pomodoro</h1><div id="time">25:00</div><button onclick="start()">Start</button><button onclick="pause()">Pause</button><button onclick="reset()">Reset</button><script>let seconds=1500,id=null;function draw(){time.textContent=`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`}function start(){if(id)return;id=setInterval(()=>{if(seconds>0){seconds--;draw()}else pause()},1000)}function pause(){clearInterval(id);id=null}function reset(){pause();seconds=1500;draw()}draw()</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <p>BHUPAL SINGH BHANDARI · JavaScript Project</p>
+    <h1>Pomodoro Timer</h1>
+    <div id="time" aria-live="polite">25:00</div>
+    <button id="toggle" type="button">Start</button>
+    <button id="reset" type="button">Reset</button>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
