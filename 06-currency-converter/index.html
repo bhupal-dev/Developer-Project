@@ -1,1 +1,23 @@
-<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Currency Converter</title><style>body{font:16px system-ui;max-width:600px;margin:60px auto;padding:20px;background:#0f172a;color:#fff}input,select,button{padding:11px;margin:4px}</style><h1>Currency Converter</h1><input id="amount" type="number" value="1"><select id="from"><option>USD</option><option>INR</option><option>EUR</option></select><select id="to"><option>INR</option><option>USD</option><option>EUR</option></select><button onclick="convert()">Convert</button><p id="out"></p><script>async function convert(){out.textContent='Loading…';let x=await fetch(`https://api.frankfurter.app/latest?amount=${amount.value}&from=${from.value}&to=${to.value}`).then(r=>r.json());out.textContent=`${amount.value} ${from.value} = ${x.rates[to.value]} ${to.value}`}</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <p>BHUPAL SINGH BHANDARI · JavaScript Project</p>
+    <h1>Currency Converter</h1>
+    <form id="form">
+      <input id="amount" type="number" min="0.01" step="0.01" value="1" required aria-label="Amount">
+      <select id="from" aria-label="From currency"><option>USD</option><option>INR</option><option>EUR</option></select>
+      <select id="to" aria-label="To currency"><option>INR</option><option>USD</option><option>EUR</option></select>
+      <button type="submit">Convert</button>
+    </form>
+    <p id="result" aria-live="polite">Enter an amount and convert.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
