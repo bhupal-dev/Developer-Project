@@ -1,1 +1,21 @@
-<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Todo App</title><style>body{font:16px system-ui;max-width:650px;margin:50px auto;padding:20px;background:#0b1220;color:#fff}input,button{padding:11px;margin:4px}li{padding:8px}</style><h1>Todo App</h1><input id="task" placeholder="New task"><button onclick="add()">Add</button><ul id="list"></ul><script>let a=JSON.parse(localStorage.todos||'[]');function render(){list.innerHTML=a.map((x,i)=>`<li><input type="checkbox" ${x.done?'checked':''} onchange="toggle(${i})"> ${x.text} <button onclick="remove(${i})">Delete</button></li>`).join('');localStorage.todos=JSON.stringify(a)}function add(){let t=task.value.trim();if(!t)return;a.push({text:t,done:false});task.value='';render()}function toggle(i){a[i].done=!a[i].done;render()}function remove(i){a.splice(i,1);render()}render()</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <p>BHUPAL SINGH BHANDARI · JavaScript Project</p>
+    <h1>Todo App</h1>
+    <form id="form">
+      <input id="task" placeholder="Add a task" autocomplete="off" required>
+      <button type="submit">Add task</button>
+    </form>
+    <ul id="list"></ul>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
