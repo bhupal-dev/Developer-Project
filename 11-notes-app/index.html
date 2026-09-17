@@ -1,1 +1,22 @@
-<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Notes App</title><style>body{font:16px system-ui;max-width:750px;margin:50px auto;padding:20px;background:#f3f4f6;color:#111}textarea{width:100%;min-height:220px;padding:12px}button{padding:10px;margin-top:8px}</style><h1>Notes</h1><textarea id="note" placeholder="Write a note..."></textarea><br><button onclick="save()">Save</button><button onclick="clearNote()">Clear</button><p id="status"></p><script>note.value=localStorage.note||'';function save(){localStorage.note=note.value;status.textContent='Saved locally.'}function clearNote(){note.value='';localStorage.removeItem('note');status.textContent='Cleared.'}</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Notes App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <p>BHUPAL SINGH BHANDARI · JavaScript Project</p>
+    <h1>Notes App</h1>
+    <form id="form" class="editor">
+      <input id="title" placeholder="Note title" required>
+      <textarea id="body" placeholder="Write your note..." required></textarea>
+      <button type="submit">Save note</button>
+    </form>
+    <section id="notes" class="notes" aria-live="polite"></section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
