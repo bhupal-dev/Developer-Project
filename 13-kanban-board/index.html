@@ -1,1 +1,21 @@
-<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kanban Board</title><style>body{font:16px system-ui;margin:40px;background:#0f172a;color:#fff}.board{display:flex;gap:15px;flex-wrap:wrap}.col{flex:1;min-width:220px;background:#1e293b;padding:15px;border-radius:12px}.task{background:#334155;padding:12px;margin:8px 0;border-radius:8px;cursor:grab}button,input{padding:9px}</style><h1>Kanban Board</h1><input id="text" placeholder="New task"><button onclick="add()">Add</button><div class="board"><div class="col" ondragover="event.preventDefault()" ondrop="drop(event,0)"><h2>Todo</h2><div id="a"></div></div><div class="col" ondragover="event.preventDefault()" ondrop="drop(event,1)"><h2>Doing</h2><div id="b"></div></div><div class="col" ondragover="event.preventDefault()" ondrop="drop(event,2)"><h2>Done</h2><div id="c"></div></div></div><script>let d=JSON.parse(localStorage.board||'[]');function render(){a.innerHTML=b.innerHTML=c.innerHTML='';d.forEach((x,i)=>{let e=document.createElement('div');e.className='task';e.draggable=true;e.textContent=x.text;e.ondragstart=()=>e.dataset.i=i;document.querySelectorAll('.col')[x.col].children[1].append(e) });localStorage.board=JSON.stringify(d)}function add(){if(!text.value.trim())return;d.push({text:text.value,col:0});text.value='';render()}function drop(e,col){let i=+e.dataTransfer.getData('text/plain');if(Number.isFinite(i)){d[i].col=col;render()}}render()</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <p>BHUPAL SINGH BHANDARI · JavaScript Project</p>
+    <h1>Kanban Board</h1>
+    <form id="form">
+      <input id="task" placeholder="New task" autocomplete="off" required>
+      <button type="submit">Add task</button>
+    </form>
+    <div id="board" class="board"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
