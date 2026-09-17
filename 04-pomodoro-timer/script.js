@@ -1,1 +1,43 @@
-let seconds=25*60,running=false,id;const time=document.querySelector('#time');function render(){time.textContent=`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`}function toggle(){running=!running;if(running)id=setInterval(()=>{if(seconds>0){seconds--;render()}else{clearInterval(id);running=false}},1000);else clearInterval(id)}document.querySelector('#toggle').onclick=toggle;document.querySelector('#reset').onclick=()=>{clearInterval(id);running=false;seconds=1500;render()};render();
+let seconds = 25 * 60;
+let running = false;
+let id = null;
+const time = document.querySelector('#time');
+const toggle = document.querySelector('#toggle');
+const reset = document.querySelector('#reset');
+
+function render() {
+  time.textContent = `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
+  toggle.textContent = running ? 'Pause' : 'Start';
+}
+
+function stop() {
+  clearInterval(id);
+  id = null;
+  running = false;
+  render();
+}
+
+toggle.addEventListener('click', () => {
+  if (running) {
+    stop();
+    return;
+  }
+  running = true;
+  id = setInterval(() => {
+    if (seconds > 0) {
+      seconds -= 1;
+      render();
+    } else {
+      stop();
+    }
+  }, 1000);
+  render();
+});
+
+reset.addEventListener('click', () => {
+  stop();
+  seconds = 25 * 60;
+  render();
+});
+
+render();
