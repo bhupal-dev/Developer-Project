@@ -1,1 +1,20 @@
-<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Chat Interface</title><style>body{font:16px system-ui;max-width:700px;margin:40px auto;background:#0b1020;color:#fff;padding:20px}.chat{height:500px;overflow:auto;background:#161b2e;padding:15px;border-radius:12px}.msg{padding:10px;margin:8px;border-radius:8px;background:#252b42}.user{background:#334155;text-align:right}input,button{padding:12px}</style><h1>AI Chat Interface</h1><div id="chat" class="chat"></div><input id="input" placeholder="Type a message"><button onclick="send()">Send</button><script>function add(t,c){chat.innerHTML+=`<div class="msg ${c}">${t}</div>`;chat.scrollTop=chat.scrollHeight}function send(){let t=input.value.trim();if(!t)return;add(t,'user');input.value='';setTimeout(()=>add('Demo response. Connect this interface to a secure server-side AI endpoint for production use.',''),400)}add('Hello. This is a frontend AI chat interface demo.','')</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Chat Interface</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="chat">
+    <header><strong>AI Chat Interface</strong><span>Frontend demo</span></header>
+    <section id="messages" class="messages" aria-live="polite"></section>
+    <form id="form" class="form">
+      <input id="input" placeholder="Type a message..." autocomplete="off" required>
+      <button type="submit">Send</button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
