@@ -1,33 +1,37 @@
 # Bhupal Singh Bhandari — JavaScript Portfolio
 
-A collection of 15 browser-based applications built to demonstrate practical frontend development with vanilla JavaScript.
+A practical frontend portfolio built with vanilla JavaScript. This repository contains 15 small applications covering APIs, browser storage, DOM interactions, async programming, drag-and-drop, Web Crypto, and UI architecture.
 
-## Portfolio
+## Projects
 
-| # | Project | What it demonstrates |
+| # | Project | Focus |
 |---|---|---|
-| 01 | Weather Dashboard | APIs, geocoding, async/await, error states |
-| 02 | Expense Tracker | State, forms, localStorage |
-| 03 | Todo App | CRUD interactions and persistence |
-| 04 | Pomodoro Timer | Timers and application state |
-| 05 | Calculator | Input handling and arithmetic logic |
-| 06 | Currency Converter | API integration and formatting |
-| 07 | Movie Search | Remote data and dynamic rendering |
-| 08 | GitHub Profile Finder | REST API integration |
-| 09 | Quiz App | Question state and scoring |
-| 10 | Password Generator | Web Crypto and configurable output |
-| 11 | Notes App | Local storage CRUD |
-| 12 | Image Gallery | Dynamic image rendering |
-| 13 | Kanban Board | Drag-and-drop interactions and persistence |
-| 14 | Markdown Editor | Live preview and text processing |
-| 15 | AI Chat Interface | Chat UI architecture and interaction design |
+| 01 | [Weather Dashboard](./01-weather-dashboard) | API + geocoding + async UI |
+| 02 | [Expense Tracker](./02-expense-tracker) | State + forms + localStorage |
+| 03 | [Task Manager](./03-todo-app) | CRUD + filters + persistence |
+| 04 | [Pomodoro Timer](./04-pomodoro-timer) | Timers + application state |
+| 05 | [Calculator](./05-calculator) | Input handling + arithmetic parser |
+| 06 | [Currency Converter](./06-currency-converter) | API integration + formatting |
+| 07 | [Movie Search](./07-movie-search) | Remote data + dynamic rendering |
+| 08 | [GitHub Profile Finder](./08-github-profile-finder) | REST API integration |
+| 09 | [Quiz App](./09-quiz-app) | Question state + scoring |
+| 10 | [Password Generator](./10-password-generator) | Web Crypto + random generation |
+| 11 | [Notes App](./11-notes-app) | Local storage CRUD + search |
+| 12 | [Image Gallery](./12-image-gallery) | Dynamic image rendering |
+| 13 | [Kanban Board](./13-kanban-board) | Drag-and-drop + persistence |
+| 14 | [Markdown Editor](./14-markdown-editor) | Live preview + text processing |
+| 15 | [AI Chat Interface](./15-ai-chat-interface) | Chat UI + API-ready architecture |
 
-## Skills demonstrated
+## Technical focus
 
 HTML5 · CSS3 · JavaScript · DOM · Fetch API · async/await · localStorage · browser events · drag and drop · Web Crypto
 
 ## About
 
-This repository is part of my transition from visual design into creative development. I focus on combining interaction design, motion thinking and frontend code to build visual, interactive experiences.
+I am developing from a visual-design background toward creative development, combining interaction design, motion thinking, and frontend code to build interactive visual experiences.
 
-Built by **Bhupal Singh Bhandari**.
+Built by **Bhupal Singh Bhandari** · GitHub: [@bhupal-dev](https://github.com/bhupal-dev)
+
+## Notes
+
+These projects are portfolio learning pieces. API-dependent projects require an internet connection, and the AI Chat Interface is intentionally a frontend demo rather than a production AI integration. No private credentials are stored in this repository.
