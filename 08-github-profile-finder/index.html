@@ -1,1 +1,22 @@
-<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GitHub Profile Finder</title><style>body{font:16px system-ui;max-width:650px;margin:60px auto;padding:20px;background:#0d1117;color:#c9d1d9}input,button{padding:12px}.card{margin-top:20px;padding:20px;background:#161b22;border-radius:12px}</style><h1>GitHub Profile Finder</h1><input id="user" placeholder="GitHub username"><button onclick="findUser()">Find</button><div id="out" class="card"></div><script>async function findUser(){let u=user.value.trim();if(!u)return;let r=await fetch(`https://api.github.com/users/${encodeURIComponent(u)}`);if(!r.ok)return out.textContent='User not found';let x=await r.json();out.innerHTML=`<h2>${x.name||x.login}</h2><p>${x.bio||'No bio'}</p><p>Public repos: ${x.public_repos}</p><a href="${x.html_url}" target="_blank">View profile</a>`}</script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GitHub Profile Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <p>BHUPAL SINGH BHANDARI · JavaScript Project</p>
+    <h1>GitHub Profile Finder</h1>
+    <p>Look up a public GitHub profile using the GitHub API.</p>
+    <form id="form" class="row">
+      <input id="user" placeholder="GitHub username" autocomplete="off" required>
+      <button type="submit">Find profile</button>
+    </form>
+    <div id="output" aria-live="polite"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
